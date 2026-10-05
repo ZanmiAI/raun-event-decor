@@ -61,7 +61,7 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex; align-items: center; justify-content: space-between;
   padding: 0.7rem 0; gap: 1rem;
 }
-.brand img { height: 48px; width: auto; }
+.brand img { height: 72px; width: auto; }
 .main-nav { display: flex; gap: 1.6rem; }
 .nav-link {
   text-decoration: none; color: var(--charcoal); font-weight: 600; font-size: 0.98rem;
@@ -228,6 +228,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ---------- Footer ---------- */
 .site-footer { background: var(--navy-dark); color: rgba(255,255,255,0.9); padding: 3rem 0 1.5rem; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+.footer-logo { height: 120px; width: auto; margin-bottom: 0.8rem; }
 .footer-grid h4 { text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 0.8rem; color: var(--white); }
 .footer-grid a { color: var(--white); }
 .footer-grid p { font-size: 0.92rem; }
