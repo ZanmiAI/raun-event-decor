@@ -166,7 +166,7 @@
       catch (err) { /* chatbot is optional — never break the page */ }
     }
   }
-  fetch("chatbot/raun-config.json")
+  fetch("chatbot/raun-config.json?v=20261004e")
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(initChatbot)
     .catch(function () { /* chatbot is optional */ });
