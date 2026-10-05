@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RAUN Event &amp; Decor — If you want your event memorable, run to RAUN</title>
   <meta name="description" content="RAUN Event & Decor — luxury event styling, decor and rentals in South Florida. Centerpieces, backdrops, photo walls, arches, lighting, tables, chairs, linens and more. Request your custom quote today.">
-  <script type="application/ld+json">
+  <script type="application/ld+json" id="faqSchema">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -35,20 +35,21 @@
   <!-- ================= HEADER ================= -->
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="RAUN Event and Decor — home">
-        <img src="assets/img/logo/logo-horizontal-hd.png" alt="RAUN Event &amp; Decor logo" width="158" height="72">
+      <a class="brand" href="#top" data-i18n-aria="header.brandAria" aria-label="RAUN Event and Decor — home">
+        <img src="assets/img/logo/logo-horizontal-hd.png" data-i18n-alt="footer.logoAlt" alt="RAUN Event &amp; Decor logo" width="158" height="72">
       </a>
-      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
-        <a href="#top" class="nav-link active">Home</a>
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#gallery" class="nav-link">Gallery</a>
-        <a href="#rentals" class="nav-link">Rentals</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#contact" class="nav-link">Contact</a>
+      <nav class="main-nav" id="mainNav" data-i18n-aria="header.navAria" aria-label="Main navigation">
+        <a href="#top" class="nav-link active" data-i18n="nav.home">Home</a>
+        <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+        <a href="#gallery" class="nav-link" data-i18n="nav.gallery">Gallery</a>
+        <a href="#rentals" class="nav-link" data-i18n="nav.rentals">Rentals</a>
+        <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="header-cta">
-        <a href="https://wa.me/19545344854?text=Hi%20RAUN%20Event%20%26%20Decor!%20I%27d%20like%20to%20plan%20my%20event." target="_blank" rel="noopener" class="btn btn-primary">Contact Us</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language / Changer de langue"><span class="lang-en active">EN</span><span class="lang-sep">|</span><span class="lang-fr">FR</span></button>
+        <a href="https://wa.me/19545344854?text=Hi%20RAUN%20Event%20%26%20Decor!%20I%27d%20like%20to%20plan%20my%20event." target="_blank" rel="noopener" class="btn btn-primary" data-i18n="header.contactBtn">Contact Us</a>
+        <button class="nav-toggle" id="navToggle" data-i18n-aria="header.menuAria" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -57,11 +58,11 @@
 
   <!-- ================= HERO ================= -->
   <section class="hero">
-    <div class="hero-bg" role="img" aria-label="Elegant event table setting with navy and orange decor"></div>
+    <div class="hero-bg" role="img" data-i18n-aria="hero.bgAria" aria-label="Elegant event table setting with navy and orange decor"></div>
     <div class="container hero-content">
-      <h1><span class="hero-line-small">If you want your event memorable</span><span class="hero-line-big">RUN TO RAUN</span></h1>
-      <a href="#contact" class="btn btn-primary btn-lg">Book Your Event &rarr;</a>
-      <p class="hero-trust">Weddings &middot; Corporate &middot; Private Events</p>
+      <h1><span class="hero-line-small" data-i18n="hero.kicker1">If you want your event memorable</span><span class="hero-line-big" data-i18n="hero.kicker2">RUN TO RAUN</span></h1>
+      <a href="#contact" class="btn btn-primary btn-lg" data-i18n-html="hero.cta">Book Your Event &rarr;</a>
+      <p class="hero-trust" data-i18n-html="hero.trust">Weddings &middot; Corporate &middot; Private Events</p>
     </div>
     <div class="hero-locale-bar"><span>&#128205; South Florida: Tamarac &middot; Fort Lauderdale &middot; Miami &middot; Hollywood &middot; Pembroke Pines &middot; Coral Springs &middot; Boca Raton &middot; West Palm Beach</span></div>
   </section>
@@ -69,26 +70,26 @@
   <!-- ================= SERVICES ================= -->
   <section class="section" id="services">
     <div class="container">
-      <p class="section-kicker">Our Services</p>
-      <h2 class="section-title">Everything you need for a seamless celebration</h2>
+      <p class="section-kicker" data-i18n="services.kicker">Our Services</p>
+      <h2 class="section-title" data-i18n="services.title">Everything you need for a seamless celebration</h2>
       <div class="cards-3">
         <article class="card">
           <div class="card-icon" aria-hidden="true">&#10022;</div>
-          <h3>Event Styling</h3>
-          <p>Full-service event design: custom d&eacute;cor themes, centerpieces, backdrops, photo walls, arches, entrance d&eacute;cor, and custom lighting &mdash; styled to bring your vision to life with elegance.</p>
-          <a href="#contact" class="card-link">Get a quote &rarr;</a>
+          <h3 data-i18n="services.card1.title">Event Styling</h3>
+          <p data-i18n="services.card1.text">Full-service event design: custom d&eacute;cor themes, centerpieces, backdrops, photo walls, arches, entrance d&eacute;cor, and custom lighting &mdash; styled to bring your vision to life with elegance.</p>
+          <a href="#contact" class="card-link" data-i18n-html="services.card1.link">Get a quote &rarr;</a>
         </article>
         <article class="card">
           <div class="card-icon" aria-hidden="true">&#9670;</div>
-          <h3>Table &amp; Chair Rentals</h3>
-          <p>Premium tables, chairs, linens, napkins, plates, chargers, glassware, and silverware. Curated collections to match any theme or color palette &mdash; delivery, setup, and teardown available.</p>
-          <a href="#rentals" class="card-link">See rentals &rarr;</a>
+          <h3 data-i18n="services.card2.title">Table &amp; Chair Rentals</h3>
+          <p data-i18n="services.card2.text">Premium tables, chairs, linens, napkins, plates, chargers, glassware, and silverware. Curated collections to match any theme or color palette &mdash; delivery, setup, and teardown available.</p>
+          <a href="#rentals" class="card-link" data-i18n-html="services.card2.link">See rentals &rarr;</a>
         </article>
         <article class="card">
           <div class="card-icon" aria-hidden="true">&#127963;</div>
-          <h3>Private Event Space</h3>
-          <p>Our own private venue in Tamarac: <strong>185 guests seated, 200 standing</strong>. A blank canvas we style your way &mdash; setup, layout, and design handled.</p>
-          <a href="#contact" class="card-link">Ask about the space &rarr;</a>
+          <h3 data-i18n="services.card3.title">Private Event Space</h3>
+          <p data-i18n-html="services.card3.text">Our own private venue in Tamarac: <strong>185 guests seated, 200 standing</strong>. A blank canvas we style your way &mdash; setup, layout, and design handled.</p>
+          <a href="#contact" class="card-link" data-i18n-html="services.card3.link">Ask about the space &rarr;</a>
         </article>
       </div>
     </div>
@@ -97,23 +98,23 @@
   <!-- ================= GALLERY ================= -->
   <section class="section section-alt" id="gallery">
     <div class="container">
-      <p class="section-kicker">Our Work</p>
-      <h2 class="section-title">Styled celebrations, unforgettable moments</h2>
-      <p class="placeholder-note">(Concept photos &mdash; real event photos coming soon)</p>
+      <p class="section-kicker" data-i18n="gallery.kicker">Our Work</p>
+      <h2 class="section-title" data-i18n="gallery.title">Styled celebrations, unforgettable moments</h2>
+      <p class="placeholder-note" data-i18n="gallery.note">(Concept photos &mdash; real event photos coming soon)</p>
       <div class="gallery-grid" id="galleryGrid">
-        <figure class="gallery-item gallery-large" data-gallery="ceremony" tabindex="0" role="button" aria-label="Open Wedding Ceremony photos">
-          <img src="assets/img/gallery/ceremony.webp" alt="Wedding ceremony arch with florals" loading="lazy">
-          <figcaption>Wedding Ceremony</figcaption>
+        <figure class="gallery-item gallery-large" data-gallery="ceremony" tabindex="0" role="button" data-i18n-aria="gallery.aria1" aria-label="Open Wedding Ceremony photos">
+          <img src="assets/img/gallery/ceremony.webp" data-i18n-alt="gallery.alt1" alt="Wedding ceremony arch with florals" loading="lazy">
+          <figcaption data-i18n="gallery.cap1">Wedding Ceremony</figcaption>
           <span class="gallery-zoom" aria-hidden="true">&#128269;</span>
         </figure>
-        <figure class="gallery-item" data-gallery="tablescape" tabindex="0" role="button" aria-label="Open Reception Styling photos">
-          <img src="assets/img/gallery/tablescape.webp" alt="Reception table styling with candles and florals" loading="lazy">
-          <figcaption>Reception Styling</figcaption>
+        <figure class="gallery-item" data-gallery="tablescape" tabindex="0" role="button" data-i18n-aria="gallery.aria2" aria-label="Open Reception Styling photos">
+          <img src="assets/img/gallery/tablescape.webp" data-i18n-alt="gallery.alt2" alt="Reception table styling with candles and florals" loading="lazy">
+          <figcaption data-i18n="gallery.cap2">Reception Styling</figcaption>
           <span class="gallery-zoom" aria-hidden="true">&#128269;</span>
         </figure>
-        <figure class="gallery-item" data-gallery="balloons" tabindex="0" role="button" aria-label="Open Balloon Installations photos">
-          <img src="assets/img/gallery/balloons.webp" alt="Navy and orange balloon installation" loading="lazy">
-          <figcaption>Balloon Installations</figcaption>
+        <figure class="gallery-item" data-gallery="balloons" tabindex="0" role="button" data-i18n-aria="gallery.aria3" aria-label="Open Balloon Installations photos">
+          <img src="assets/img/gallery/balloons.webp" data-i18n-alt="gallery.alt3" alt="Navy and orange balloon installation" loading="lazy">
+          <figcaption data-i18n="gallery.cap3">Balloon Installations</figcaption>
           <span class="gallery-zoom" aria-hidden="true">&#128269;</span>
         </figure>
       </div>
@@ -123,20 +124,20 @@
   <!-- ================= RENTALS ================= -->
   <section class="section" id="rentals">
     <div class="container">
-      <p class="section-kicker">Rentals</p>
-      <h2 class="section-title">Everything for your table, ready to rent</h2>
-      <p class="section-sub">Pick what you need &mdash; we deliver, set up, and tear down.</p>
+      <p class="section-kicker" data-i18n="rentals.kicker">Rentals</p>
+      <h2 class="section-title" data-i18n="rentals.title">Everything for your table, ready to rent</h2>
+      <p class="section-sub" data-i18n="rentals.sub">Pick what you need &mdash; we deliver, set up, and tear down.</p>
       <ul class="rental-list">
-        <li>Tables</li>
-        <li>Chairs</li>
-        <li>Linens</li>
-        <li>Napkins</li>
-        <li>Plates</li>
-        <li>Chargers</li>
-        <li>Glassware</li>
-        <li>Silverware</li>
+        <li data-i18n="rentals.i1">Tables</li>
+        <li data-i18n="rentals.i2">Chairs</li>
+        <li data-i18n="rentals.i3">Linens</li>
+        <li data-i18n="rentals.i4">Napkins</li>
+        <li data-i18n="rentals.i5">Plates</li>
+        <li data-i18n="rentals.i6">Chargers</li>
+        <li data-i18n="rentals.i7">Glassware</li>
+        <li data-i18n="rentals.i8">Silverware</li>
       </ul>
-      <div class="center"><a href="#contact" class="btn btn-primary">Request Rental Quote &rarr;</a></div>
+      <div class="center"><a href="#contact" class="btn btn-primary" data-i18n-html="rentals.cta">Request Rental Quote &rarr;</a></div>
     </div>
   </section>
 
@@ -144,26 +145,26 @@
   <section class="section section-navy" id="about">
     <div class="container about-grid">
       <div>
-        <p class="section-kicker light">About RAUN</p>
-        <h2 class="section-title light about-title">The friend who throws the best parties</h2>
-        <p>RAUN Event &amp; Decor is a South Florida event styling and rental company based in Tamarac, led by owner Rinaude Merard. We handle the details behind the scenes &mdash; design, d&eacute;cor, rentals, setup, and teardown &mdash; so you can be joyful out front with your guests.</p>
-        <p>From intimate birthdays to 200-guest celebrations, every event gets a custom look and a custom quote. No two events are the same &mdash; and neither are our designs.</p>
+        <p class="section-kicker light" data-i18n="about.kicker">About RAUN</p>
+        <h2 class="section-title light about-title" data-i18n="about.title">The friend who throws the best parties</h2>
+        <p data-i18n="about.p1">RAUN Event &amp; Decor is a South Florida event styling and rental company based in Tamarac, led by owner Rinaude Merard. We handle the details behind the scenes &mdash; design, d&eacute;cor, rentals, setup, and teardown &mdash; so you can be joyful out front with your guests.</p>
+        <p data-i18n="about.p2">From intimate birthdays to 200-guest celebrations, every event gets a custom look and a custom quote. No two events are the same &mdash; and neither are our designs.</p>
         <ul class="about-points">
-          <li>Custom d&eacute;cor design for your theme &amp; colors</li>
-          <li>Full rental inventory: tables to glassware</li>
-          <li>Private event space &mdash; 185 seated / 200 standing</li>
-          <li>Photo, video &amp; DJ available on request</li>
+          <li data-i18n="about.li1">Custom d&eacute;cor design for your theme &amp; colors</li>
+          <li data-i18n="about.li2">Full rental inventory: tables to glassware</li>
+          <li data-i18n="about.li3">Private event space &mdash; 185 seated / 200 standing</li>
+          <li data-i18n="about.li4">Photo, video &amp; DJ available on request</li>
         </ul>
       </div>
       <div class="about-side">
-        <img class="about-photo" src="assets/img/gallery/tablescape.webp" alt="Elegant RAUN event table setting" loading="lazy">
+        <img class="about-photo" src="assets/img/gallery/tablescape.webp" data-i18n-alt="about.photoAlt" alt="Elegant RAUN event table setting" loading="lazy">
         <div class="about-card">
-        <h3>Good to know</h3>
+        <h3 data-i18n="about.cardTitle">Good to know</h3>
         <dl>
-          <div><dt>Service area</dt><dd>South Florida (10 min &ndash; 2 hrs travel)</dd></div>
-          <div><dt>Pricing</dt><dd>Custom quote per event &mdash; no fixed prices</dd></div>
-          <div><dt>Booking</dt><dd>Deposit secures your date</dd></div>
-          <div><dt>Contact</dt><dd>Form below or WhatsApp for fastest response</dd></div>
+          <div><dt data-i18n="about.dt1">Service area</dt><dd data-i18n="about.dd1">South Florida (10 min &ndash; 2 hrs travel)</dd></div>
+          <div><dt data-i18n="about.dt2">Pricing</dt><dd data-i18n="about.dd2">Custom quote per event &mdash; no fixed prices</dd></div>
+          <div><dt data-i18n="about.dt3">Booking</dt><dd data-i18n="about.dd3">Deposit secures your date</dd></div>
+          <div><dt data-i18n="about.dt4">Contact</dt><dd data-i18n="about.dd4">Form below or WhatsApp for fastest response</dd></div>
         </dl>
         </div>
       </div>
@@ -173,24 +174,24 @@
   <!-- ================= REVIEWS ================= -->
   <section class="section section-navy-dark" id="reviews">
     <div class="container">
-      <p class="section-kicker accent">Client Love</p>
-      <h2 class="section-title light">Celebrations our clients will never forget</h2>
-      <p class="placeholder-note light">(Sample reviews &mdash; real client reviews coming soon)</p>
+      <p class="section-kicker accent" data-i18n="reviews.kicker">Client Love</p>
+      <h2 class="section-title light" data-i18n="reviews.title">Celebrations our clients will never forget</h2>
+      <p class="placeholder-note light" data-i18n="reviews.note">(Sample reviews &mdash; real client reviews coming soon)</p>
       <div class="cards-3">
         <article class="review-card">
-          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>&ldquo;RAUN turned our wedding into an absolute fairytale. The d&eacute;cor was stunning and every detail was flawless.&rdquo;</p>
-          <p class="review-name">Amara &amp; James <span>&middot; Wedding</span></p>
+          <div class="stars" data-i18n-aria="reviews.starsAria" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p data-i18n="reviews.q1">&ldquo;RAUN turned our wedding into an absolute fairytale. The d&eacute;cor was stunning and every detail was flawless.&rdquo;</p>
+          <p class="review-name"><span data-i18n="reviews.n1">Amara &amp; James</span> <span>&middot; <span data-i18n="reviews.t1">Wedding</span></span></p>
         </article>
         <article class="review-card">
-          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>&ldquo;From setup to teardown, everything was seamless. Our gala looked incredible &mdash; guests are still talking about it.&rdquo;</p>
-          <p class="review-name">Michelle K. <span>&middot; Corporate Gala</span></p>
+          <div class="stars" data-i18n-aria="reviews.starsAria" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p data-i18n="reviews.q2">&ldquo;From setup to teardown, everything was seamless. Our gala looked incredible &mdash; guests are still talking about it.&rdquo;</p>
+          <p class="review-name"><span data-i18n="reviews.n2">Michelle K.</span> <span>&middot; <span data-i18n="reviews.t2">Corporate Gala</span></span></p>
         </article>
         <article class="review-card">
-          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>&ldquo;The balloon arch and table styling made my daughter's birthday magical. Worth every penny!&rdquo;</p>
-          <p class="review-name">Danielle R. <span>&middot; Birthday Party</span></p>
+          <div class="stars" data-i18n-aria="reviews.starsAria" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p data-i18n="reviews.q3">&ldquo;The balloon arch and table styling made my daughter's birthday magical. Worth every penny!&rdquo;</p>
+          <p class="review-name"><span data-i18n="reviews.n3">Danielle R.</span> <span>&middot; <span data-i18n="reviews.t3">Birthday Party</span></span></p>
         </article>
       </div>
     </div>
@@ -200,8 +201,8 @@
   <!-- ================= CTA BAND ================= -->
   <section class="cta-band">
     <div class="container cta-inner">
-      <h2>Ready to make your event unforgettable?</h2>
-      <a href="https://wa.me/19545344854?text=Hi%20RAUN%20Event%20%26%20Decor!%20I%27d%20like%20to%20plan%20my%20event." target="_blank" rel="noopener" class="btn btn-light">Contact Us &rarr;</a>
+      <h2 data-i18n="cta.title">Ready to make your event unforgettable?</h2>
+      <a href="https://wa.me/19545344854?text=Hi%20RAUN%20Event%20%26%20Decor!%20I%27d%20like%20to%20plan%20my%20event." target="_blank" rel="noopener" class="btn btn-light" data-i18n-html="cta.btn">Contact Us &rarr;</a>
     </div>
   </section>
 
@@ -209,60 +210,60 @@
   <section class="section" id="contact">
     <div class="container contact-grid">
       <div>
-        <p class="section-kicker">Contact</p>
-        <h2 class="section-title">Let's plan your celebration</h2>
-        <p>Fill in the details and we'll continue on WhatsApp &mdash; it's the fastest way to reach us and get your custom quote.</p>
+        <p class="section-kicker" data-i18n="contact.kicker">Contact</p>
+        <h2 class="section-title" data-i18n="contact.title">Let's plan your celebration</h2>
+        <p data-i18n="contact.intro">Fill in the details and we'll continue on WhatsApp &mdash; it's the fastest way to reach us and get your custom quote.</p>
         <ul class="contact-list">
-          <li><strong>Phone / WhatsApp:</strong> <a href="https://wa.me/19545344854?text=Hi%20RAUN%20Event%20%26%20Decor!" target="_blank" rel="noopener">+1 (954) 534-4854</a></li>
-          <li><strong>Email:</strong> <a href="mailto:rauneventanddecor@gmail.com">rauneventanddecor@gmail.com</a></li>
-          <li><strong>Based in:</strong> Tamarac, Florida &mdash; serving South Florida</li>
-          <li><strong>Instagram:</strong> <a href="https://www.instagram.com/rauneventdecor" target="_blank" rel="noopener">@rauneventdecor</a></li>
+          <li><strong data-i18n="contact.phoneLabel">Phone / WhatsApp:</strong> <a href="https://wa.me/19545344854?text=Hi%20RAUN%20Event%20%26%20Decor!" target="_blank" rel="noopener">+1 (954) 534-4854</a></li>
+          <li><strong data-i18n="contact.emailLabel">Email:</strong> <a href="mailto:rauneventanddecor@gmail.com">rauneventanddecor@gmail.com</a></li>
+          <li><strong data-i18n="contact.basedLabel">Based in:</strong> <span data-i18n="contact.basedText">Tamarac, Florida &mdash; serving South Florida</span></li>
+          <li><strong data-i18n="contact.igLabel">Instagram:</strong> <a href="https://www.instagram.com/rauneventdecor" target="_blank" rel="noopener">@rauneventdecor</a></li>
         </ul>
-        <p class="fine-print">A deposit is required to secure your date. Deposit amount and cancellation policy are shared before booking.</p>
-        <img class="contact-photo" src="assets/img/gallery/ceremony.webp" alt="RAUN event styling (photo placeholder)" loading="lazy">
+        <p class="fine-print" data-i18n="contact.fine">A deposit is required to secure your date. Deposit amount and cancellation policy are shared before booking.</p>
+        <img class="contact-photo" src="assets/img/gallery/ceremony.webp" data-i18n-alt="contact.photoAlt" alt="RAUN event styling (photo placeholder)" loading="lazy">
       </div>
       <form class="booking-form" id="bookingForm" novalidate>
-        <h3>Request your quote</h3>
-        <label>Your name
-          <input type="text" name="name" id="fName" placeholder="Jane Doe" required>
+        <h3 data-i18n="form.title">Request your quote</h3>
+        <label><span data-i18n="form.name">Your name</span>
+          <input type="text" name="name" id="fName" data-i18n-ph="form.namePh" placeholder="Jane Doe" required>
         </label>
-        <label>Phone
+        <label><span data-i18n="form.phone">Phone</span>
           <input type="tel" name="phone" id="fPhone" placeholder="(954) 000-0000" required>
         </label>
         <div class="form-row">
-          <label>Event date
+          <label><span data-i18n="form.date">Event date</span>
             <input type="date" name="date" id="fDate" required>
           </label>
-          <label>Guests (approx.)
+          <label><span data-i18n="form.guests">Guests (approx.)</span>
             <input type="number" name="guests" id="fGuests" min="1" placeholder="100">
           </label>
         </div>
-        <label>Event type
+        <label><span data-i18n="form.type">Event type</span>
           <select name="type" id="fType">
-            <option>Wedding</option>
-            <option>Birthday</option>
-            <option>Corporate event</option>
-            <option>Baby / bridal shower</option>
-            <option>Graduation</option>
-            <option>Other celebration</option>
+            <option data-i18n="form.opt1">Wedding</option>
+            <option data-i18n="form.opt2">Birthday</option>
+            <option data-i18n="form.opt3">Corporate event</option>
+            <option data-i18n="form.opt4">Baby / bridal shower</option>
+            <option data-i18n="form.opt5">Graduation</option>
+            <option data-i18n="form.opt6">Other celebration</option>
           </select>
         </label>
         <fieldset>
-          <legend>What do you need? (pick all that apply)</legend>
+          <legend data-i18n="form.needs">What do you need? (pick all that apply)</legend>
           <div class="check-grid">
-            <label><input type="checkbox" name="svc" value="Event styling & decor"> Event styling &amp; decor</label>
-            <label><input type="checkbox" name="svc" value="Table & chair rentals"> Table &amp; chair rentals</label>
-            <label><input type="checkbox" name="svc" value="Linens, chargers & tableware"> Linens, chargers &amp; tableware</label>
-            <label><input type="checkbox" name="svc" value="Private event space"> Private event space</label>
-            <label><input type="checkbox" name="svc" value="Photo / video / DJ"> Photo / video / DJ</label>
-            <label><input type="checkbox" name="svc" value="Full package"> Full package</label>
+            <label><input type="checkbox" name="svc" value="Event styling & decor"> <span data-i18n="form.chk1">Event styling &amp; decor</span></label>
+            <label><input type="checkbox" name="svc" value="Table & chair rentals"> <span data-i18n="form.chk2">Table &amp; chair rentals</span></label>
+            <label><input type="checkbox" name="svc" value="Linens, chargers & tableware"> <span data-i18n="form.chk3">Linens, chargers &amp; tableware</span></label>
+            <label><input type="checkbox" name="svc" value="Private event space"> <span data-i18n="form.chk4">Private event space</span></label>
+            <label><input type="checkbox" name="svc" value="Photo / video / DJ"> <span data-i18n="form.chk5">Photo / video / DJ</span></label>
+            <label><input type="checkbox" name="svc" value="Full package"> <span data-i18n="form.chk6">Full package</span></label>
           </div>
         </fieldset>
-        <label>Anything else? (colors, theme, ideas)
-          <textarea name="notes" id="fNotes" rows="3" placeholder="Tell us your vision..."></textarea>
+        <label><span data-i18n="form.notes">Anything else? (colors, theme, ideas)</span>
+          <textarea name="notes" id="fNotes" rows="3" data-i18n-ph="form.notesPh" placeholder="Tell us your vision..."></textarea>
         </label>
-        <button type="submit" class="btn btn-primary btn-block">Send via WhatsApp &rarr;</button>
-        <p class="fine-print center">This opens WhatsApp with your details filled in. Prefer email? <a href="mailto:rauneventanddecor@gmail.com?subject=Event%20Quote%20Request">Email us instead</a>.</p>
+        <button type="submit" class="btn btn-primary btn-block" data-i18n-html="form.submit">Send via WhatsApp &rarr;</button>
+        <p class="fine-print center" data-i18n-html="form.fine">This opens WhatsApp with your details filled in. Prefer email? <a href="mailto:rauneventanddecor@gmail.com?subject=Event%20Quote%20Request">Email us instead</a>.</p>
       </form>
     </div>
   </section>
@@ -271,47 +272,47 @@
   <section class="section section-alt" id="faq">
     <div class="container">
       <p class="section-kicker">FAQ</p>
-      <h2 class="section-title">Questions, answered</h2>
+      <h2 class="section-title" data-i18n="faq.title">Questions, answered</h2>
       <div class="faq-list">
         <details class="faq-item">
-          <summary>How far in advance should I book?</summary>
-          <p>There's no strict cutoff, but popular dates — especially weekends in season — go fast. Reach out as soon as you have a date in mind and we'll lock it in.</p>
+          <summary data-i18n="faq.q1">How far in advance should I book?</summary>
+          <p data-i18n="faq.a1">There's no strict cutoff, but popular dates — especially weekends in season — go fast. Reach out as soon as you have a date in mind and we'll lock it in.</p>
         </details>
         <details class="faq-item">
-          <summary>How much does event decor cost?</summary>
-          <p>Every event is unique, so we work by custom quote — it depends on your guest count, decor, rentals, setup, and delivery. Tell us what you're planning and we'll build your personal quote.</p>
+          <summary data-i18n="faq.q2">How much does event decor cost?</summary>
+          <p data-i18n="faq.a2">Every event is unique, so we work by custom quote — it depends on your guest count, decor, rentals, setup, and delivery. Tell us what you're planning and we'll build your personal quote.</p>
         </details>
         <details class="faq-item">
-          <summary>Is a deposit required?</summary>
-          <p>Yes — a deposit secures your date. The exact amount is shared with you clearly before you book.</p>
+          <summary data-i18n="faq.q3">Is a deposit required?</summary>
+          <p data-i18n="faq.a3">Yes — a deposit secures your date. The exact amount is shared with you clearly before you book.</p>
         </details>
         <details class="faq-item">
-          <summary>What is your cancellation policy?</summary>
-          <p>Life happens — we get it. Our cancellation and rescheduling policy is shared with you clearly before you book, so there are no surprises.</p>
+          <summary data-i18n="faq.q4">What is your cancellation policy?</summary>
+          <p data-i18n="faq.a4">Life happens — we get it. Our cancellation and rescheduling policy is shared with you clearly before you book, so there are no surprises.</p>
         </details>
         <details class="faq-item">
-          <summary>Do you deliver, set up, and tear down?</summary>
-          <p>Yes! We deliver, set up, and tear down — depending on the package you choose. You enjoy your event; we handle everything behind the scenes.</p>
+          <summary data-i18n="faq.q5">Do you deliver, set up, and tear down?</summary>
+          <p data-i18n="faq.a5">Yes! We deliver, set up, and tear down — depending on the package you choose. You enjoy your event; we handle everything behind the scenes.</p>
         </details>
         <details class="faq-item">
-          <summary>What areas do you serve?</summary>
-          <p>We're based in Tamarac, Florida and serve all of South Florida — Miami, Fort Lauderdale, Hollywood, Pembroke Pines, Coral Springs, Boca Raton, West Palm Beach and beyond. We travel anywhere from 10 minutes to 2 hours away depending on your event.</p>
+          <summary data-i18n="faq.q6">What areas do you serve?</summary>
+          <p data-i18n="faq.a6">We're based in Tamarac, Florida and serve all of South Florida — Miami, Fort Lauderdale, Hollywood, Pembroke Pines, Coral Springs, Boca Raton, West Palm Beach and beyond. We travel anywhere from 10 minutes to 2 hours away depending on your event.</p>
         </details>
         <details class="faq-item">
-          <summary>Can I rent tables and chairs without full styling?</summary>
-          <p>Absolutely — you can rent tables, chairs, linens, chargers, glassware, silverware and more without the full styling service.</p>
+          <summary data-i18n="faq.q7">Can I rent tables and chairs without full styling?</summary>
+          <p data-i18n="faq.a7">Absolutely — you can rent tables, chairs, linens, chargers, glassware, silverware and more without the full styling service.</p>
         </details>
         <details class="faq-item">
-          <summary>Will you match my theme and colors?</summary>
-          <p>Yes! Every design is custom — we match your theme, colors, and style from the first sketch to the final table.</p>
+          <summary data-i18n="faq.q8">Will you match my theme and colors?</summary>
+          <p data-i18n="faq.a8">Yes! Every design is custom — we match your theme, colors, and style from the first sketch to the final table.</p>
         </details>
         <details class="faq-item">
-          <summary>Do you offer photography, video, or DJ services?</summary>
-          <p>We offer decor packages, and photography, video, and DJ services can be added on request. One team, one vision, zero stress.</p>
+          <summary data-i18n="faq.q9">Do you offer photography, video, or DJ services?</summary>
+          <p data-i18n="faq.a9">We offer decor packages, and photography, video, and DJ services can be added on request. One team, one vision, zero stress.</p>
         </details>
         <details class="faq-item">
-          <summary>How many guests does your event space hold?</summary>
-          <p>Our private event space fits 185 guests seated and 200 standing — a blank canvas we style your way.</p>
+          <summary data-i18n="faq.q10">How many guests does your event space hold?</summary>
+          <p data-i18n="faq.a10">Our private event space fits 185 guests seated and 200 standing — a blank canvas we style your way.</p>
         </details>
       </div>
     </div>
@@ -321,28 +322,29 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <img class="footer-logo" src="assets/img/logo/logo-horizontal-white-hd.png" alt="RAUN Event &amp; Decor logo" width="264" height="120">
-        <p>If you want your event to be memorable, run to RAUN.</p>
+        <img class="footer-logo" src="assets/img/logo/logo-horizontal-white-hd.png" data-i18n-alt="footer.logoAlt" alt="RAUN Event &amp; Decor logo" width="264" height="120">
+        <p data-i18n="footer.slogan">If you want your event to be memorable, run to RAUN.</p>
       </div>
       <div>
-        <h4>Contact Us</h4>
+        <h4 data-i18n="footer.contactH">Contact Us</h4>
         <p><a href="mailto:rauneventanddecor@gmail.com">rauneventanddecor@gmail.com</a><br>
         <a href="https://wa.me/19545344854?text=Hi%20RAUN%20Event%20%26%20Decor!" target="_blank" rel="noopener">+1 (954) 534-4854</a><br>
         Tamarac, Florida</p>
       </div>
       <div>
-        <h4>Follow Us</h4>
+        <h4 data-i18n="footer.followH">Follow Us</h4>
         <p><a href="https://www.instagram.com/rauneventdecor" target="_blank" rel="noopener">Instagram</a><br>
-        <span class="coming-soon">Facebook &mdash; coming soon</span><br>
-        <span class="coming-soon">TikTok &mdash; coming soon</span></p>
+        <span class="coming-soon" data-i18n="footer.fbSoon">Facebook &mdash; coming soon</span><br>
+        <span class="coming-soon" data-i18n="footer.ttSoon">TikTok &mdash; coming soon</span></p>
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>&copy; 2026 RAUN Event &amp; Decor &middot; All rights reserved.</p>
+      <p data-i18n="footer.rights">&copy; 2026 RAUN Event &amp; Decor &middot; All rights reserved.</p>
     </div>
   </footer>
 
   <script src="chatbot/engine.js"></script>
-  <script src="assets/js/site.js?v=20261004e"></script>
+  <script src="assets/js/i18n.js?v=20261005a"></script>
+  <script src="assets/js/site.js?v=20261005a"></script>
 </body>
 </html>
