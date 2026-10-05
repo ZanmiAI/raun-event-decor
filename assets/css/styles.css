@@ -185,6 +185,10 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- Contact ---------- */
 .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 3rem; align-items: start; }
+.contact-photo {
+  width: 100%; height: 230px; object-fit: cover; margin-top: 1.4rem;
+  border-radius: var(--radius); box-shadow: var(--shadow);
+}
 .contact-list { list-style: none; margin: 1.5rem 0; }
 .contact-list li { padding: 0.5rem 0; }
 .contact-list a { color: var(--navy); font-weight: 600; }
