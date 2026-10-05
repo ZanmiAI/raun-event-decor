@@ -71,6 +71,94 @@
     });
   }
 
+  // ---------- Gallery: hover slideshow + lightbox ----------
+  // To add real photos later, just append file paths to the photos arrays below.
+  var GALLERY = {
+    ceremony:   { title: "Wedding Ceremony",      photos: ["assets/img/gallery/ceremony.webp"] },
+    tablescape: { title: "Reception Styling",      photos: ["assets/img/gallery/tablescape.webp"] },
+    balloons:   { title: "Balloon Installations",  photos: ["assets/img/gallery/balloons.webp"] }
+  };
+
+  var lb = null, lbImg = null, lbCap = null, lbCount = null;
+  var lbCat = null, lbIdx = 0;
+
+  function buildLightbox() {
+    lb = document.createElement("div");
+    lb.className = "lightbox";
+    lb.setAttribute("role", "dialog");
+    lb.setAttribute("aria-label", "Photo viewer");
+    lb.innerHTML =
+      '<button class="lb-btn lb-close" aria-label="Close">&times;</button>' +
+      '<button class="lb-btn lb-prev" aria-label="Previous photo">&#8249;</button>' +
+      '<img alt="">' +
+      '<button class="lb-btn lb-next" aria-label="Next photo">&#8250;</button>' +
+      '<div class="lb-caption"></div><div class="lb-count"></div>';
+    document.body.appendChild(lb);
+    lbImg = lb.querySelector("img");
+    lbCap = lb.querySelector(".lb-caption");
+    lbCount = lb.querySelector(".lb-count");
+    lb.querySelector(".lb-close").addEventListener("click", closeLightbox);
+    lb.querySelector(".lb-prev").addEventListener("click", function (e) { e.stopPropagation(); stepLightbox(-1); });
+    lb.querySelector(".lb-next").addEventListener("click", function (e) { e.stopPropagation(); stepLightbox(1); });
+    lb.addEventListener("click", function (e) { if (e.target === lb) closeLightbox(); });
+    document.addEventListener("keydown", function (e) {
+      if (!lb.classList.contains("open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") stepLightbox(-1);
+      if (e.key === "ArrowRight") stepLightbox(1);
+    });
+  }
+
+  function openLightbox(cat, idx) {
+    if (!lb) buildLightbox();
+    lbCat = cat; lbIdx = idx || 0;
+    renderLightbox();
+    lb.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function renderLightbox() {
+    var g = GALLERY[lbCat];
+    lbImg.src = g.photos[lbIdx];
+    lbImg.alt = g.title + " photo " + (lbIdx + 1);
+    lbCap.textContent = g.title;
+    lbCount.textContent = g.photos.length > 1 ? (lbIdx + 1) + " / " + g.photos.length : "";
+  }
+  function stepLightbox(d) {
+    var n = GALLERY[lbCat].photos.length;
+    lbIdx = (lbIdx + d + n) % n;
+    renderLightbox();
+  }
+  function closeLightbox() {
+    lb.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll("[data-gallery]").forEach(function (fig) {
+    var cat = fig.getAttribute("data-gallery");
+    var g = GALLERY[cat];
+    if (!g) return;
+    var img = fig.querySelector("img");
+    var timer = null, i = 0;
+    // Hover: cycle through the category's photos
+    fig.addEventListener("mouseenter", function () {
+      if (g.photos.length < 2) return;
+      timer = setInterval(function () {
+        i = (i + 1) % g.photos.length;
+        img.src = g.photos[i];
+      }, 1400);
+    });
+    fig.addEventListener("mouseleave", function () {
+      if (timer) { clearInterval(timer); timer = null; }
+      i = 0; img.src = g.photos[0];
+    });
+    // Click / Enter: open lightbox
+    var open = function () { openLightbox(cat, 0); };
+    fig.addEventListener("click", open);
+    fig.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+    });
+  });
+
   // ---------- Chatbot ----------
   function initChatbot(config) {
     if (window.SmartAssistant && config) {
