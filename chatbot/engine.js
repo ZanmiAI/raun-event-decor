@@ -495,6 +495,17 @@
       var a = new Assistant(config);
       a.start();
       return a;
+    },
+    destroy: function () {
+      // Remove a running assistant so init() can run again (e.g. language switch).
+      if (!alreadyInit) return;
+      try {
+        var launcher = document.querySelector("button." + PREFIX + "-launcher");
+        if (launcher && launcher.parentNode) launcher.parentNode.removeChild(launcher);
+        var panel = document.querySelector("." + PREFIX + "-panel");
+        if (panel && panel.parentNode) panel.parentNode.removeChild(panel);
+      } catch (err) { /* never break the page */ }
+      alreadyInit = false;
     }
   };
 
