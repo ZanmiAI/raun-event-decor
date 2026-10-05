@@ -26,7 +26,9 @@
     launcherLabel: "Chat with us",
     restartLabel: "Restart chat",
     closeLabel: "Close chat",
-    sendLabel: "Send"
+    sendLabel: "Send",
+    micLabel: "Speak instead of typing",
+    repeatNudge: "I just shared that right above \u2014 tap below and I'll connect you with the team directly."
   };
 
   // ------------------------------------------------------------------ helpers
@@ -116,6 +118,13 @@
       "." + PREFIX + "-title{flex:1;min-width:0}" +
       "." + PREFIX + "-name{font-weight:700;font-size:15px;line-height:1.2}" +
       "." + PREFIX + "-tag{font-size:12px;opacity:.88;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}" +
+      "." + PREFIX + "-powered{font-size:11px;opacity:.8;margin-top:2px}" +
+      "." + PREFIX + "-powered a{color:#fff;text-decoration:underline}" +
+      "." + PREFIX + "-mic{width:44px;height:44px;border-radius:50%;border:1.5px solid #ddd;background:#fff;" +
+      "cursor:pointer;font-size:18px;flex:none;display:flex;align-items:center;justify-content:center}" +
+      "." + PREFIX + "-mic:hover{border-color:" + secondary + "}" +
+      "." + PREFIX + "-listening{background:#e5484d !important;border-color:#e5484d !important;" +
+      "animation:" + PREFIX + "-blink 1.1s infinite}" +
       "." + PREFIX + "-hbtn{background:rgba(255,255,255,.16);border:none;color:#fff;width:32px;height:32px;" +
       "border-radius:50%;cursor:pointer;font-size:15px;line-height:1;display:flex;align-items:center;" +
       "justify-content:center;flex:none}" +
@@ -198,6 +207,17 @@
     var title = el("div", PREFIX + "-title");
     title.appendChild(el("div", PREFIX + "-name", this.brand.assistantName || this.brand.name || "Assistant"));
     if (this.brand.tagline) title.appendChild(el("div", PREFIX + "-tag", this.brand.tagline));
+    if (this.brand.poweredBy && this.brand.poweredBy.text) {
+      var pb = el("div", PREFIX + "-powered");
+      pb.appendChild(document.createTextNode("Powered by "));
+      var pbLink = document.createElement("a");
+      pbLink.href = this.brand.poweredBy.url || "#";
+      pbLink.target = "_blank";
+      pbLink.rel = "noopener";
+      pbLink.textContent = this.brand.poweredBy.text;
+      pb.appendChild(pbLink);
+      title.appendChild(pb);
+    }
     var restart = el("button", PREFIX + "-hbtn", "\u21BB");
     restart.setAttribute("aria-label", this.ui.restartLabel);
     restart.setAttribute("title", this.ui.restartLabel);
@@ -231,6 +251,31 @@
       if (e.key === "Enter") submit();
     });
     inputRow.appendChild(input);
+    // Mic button (voice input) — only where the browser supports it
+    var SR = global.SpeechRecognition || global.webkitSpeechRecognition;
+    if (SR) {
+      var mic = el("button", PREFIX + "-mic", "\uD83C\uDFA4");
+      mic.setAttribute("aria-label", this.ui.micLabel);
+      mic.setAttribute("title", this.ui.micLabel);
+      mic.setAttribute("type", "button");
+      var rec = null, listening = false;
+      mic.addEventListener("click", function () {
+        if (listening && rec) { try { rec.stop(); } catch (e) {} return; }
+        rec = new SR();
+        rec.lang = "en-US";
+        rec.interimResults = false;
+        rec.onresult = function (e) {
+          var t = e.results[0][0].transcript;
+          input.value = (input.value ? input.value + " " : "") + t;
+          input.focus();
+        };
+        rec.onend = function () { listening = false; mic.classList.remove(PREFIX + "-listening"); };
+        rec.onerror = function () { listening = false; mic.classList.remove(PREFIX + "-listening"); };
+        try { rec.start(); listening = true; mic.classList.add(PREFIX + "-listening"); }
+        catch (e) { listening = false; }
+      });
+      inputRow.appendChild(mic);
+    }
     inputRow.appendChild(send);
 
     panel.appendChild(header);
@@ -319,7 +364,7 @@
     });
   };
 
-  Assistant.prototype.goto = function (nodeId) {
+  Assistant.prototype.goto = function (nodeId, opts) {
     var node = this.cfg.nodes[nodeId];
     if (!node) {
       this.gotoFallback();
@@ -329,6 +374,8 @@
     var self = this;
     this.saySequence(node.messages || [], function () {
       self.showReplies(node.replies || []);
+      // If the visitor typed the same question twice, don't parrot — nudge to a human.
+      if (opts && opts.repeat) self.addBotMsg(self.ui.repeatNudge);
     });
   };
 
@@ -352,6 +399,7 @@
 
   Assistant.prototype.chooseReply = function (reply) {
     if (this.busy) return;
+    this.lastTextNode = null; // button taps reset the repeat tracker
     this.addUserMsg(reply.label);
     var self = this;
     setTimeout(function () { self.doAction(reply); }, 250);
@@ -378,7 +426,14 @@
     var self = this;
     setTimeout(function () {
       var nodeId = self.findKeywordNode(text);
-      if (nodeId && self.cfg.nodes[nodeId]) self.goto(nodeId);
+      if (nodeId && self.cfg.nodes[nodeId]) {
+        if (nodeId === self.lastTextNode) {
+          self.goto(nodeId, { repeat: true });
+        } else {
+          self.lastTextNode = nodeId;
+          self.goto(nodeId);
+        }
+      }
       else self.gotoFallback();
     }, 250);
   };
@@ -410,6 +465,7 @@
     this.msgBox.textContent = "";
     this.replyBar.textContent = "";
     this.busy = false;
+    this.lastTextNode = null;
     this.goto(this.cfg.start || "greeting");
   };
 
