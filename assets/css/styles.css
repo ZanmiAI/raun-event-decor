@@ -292,7 +292,7 @@ img { max-width: 100%; height: auto; display: block; }
   .nav-link { padding: 0.7rem 0; border-bottom: 1px solid #f3f3f3; }
   .nav-toggle { display: block; }
   .header-cta .btn { display: none; }
-  .hero-content { padding: 4rem 0; }
+  .hero-content { padding: 4rem 0 6rem; }
   .check-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
 }
